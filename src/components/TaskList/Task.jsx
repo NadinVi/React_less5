@@ -8,6 +8,7 @@ function Task({ task }) {
   console.log('[Task]', theme);
 
   const className = `panel-${theme}`;
+  const buttonClassName = `button-${theme}`;
 
 
   const handleChangeCheckbox = (e) => {
@@ -29,17 +30,17 @@ function Task({ task }) {
 
   return (
     <section className={className}>
-    <label>
-      <input
-        type="checkbox"
-        checked={task.done}
-        onChange={handleChangeCheckbox}></input>
-      <span>{task.text}</span>
-      <button onClick={handleDelete}>Delete</button>
-    </label>
+      <div className="task">
+        <input
+          type="checkbox"
+          checked={task.done}
+          onChange={handleChangeCheckbox}></input>
+        <label className="task">{task.text}</label>
+        <button className={buttonClassName}
+          onClick={handleDelete}>Delete</button>
+      </div>
     </section>
   )
-
 }
 
 export default Task

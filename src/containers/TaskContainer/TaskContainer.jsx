@@ -31,8 +31,8 @@ const TaskContainer = () => {
 
   return (
     <>
-      <AddTask/>
-      <TaskList/>
+      <AddTask />
+      <TaskList />
     </>
   );
 };

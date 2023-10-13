@@ -1,19 +1,17 @@
 import React from "react";
-import Form from "../../components/Form/Form";
 import { useTheme } from "../../contexts/theme";
 
-const PanelContainer = () => {
-//   const [theme, setTheme] = useState('blue');
+const PanelTheme = () => {
+  //   const [theme, setTheme] = useState('blue');
 
-//   const handleChangeTheme = (event) => {
-//     setTheme(event.target.checked ? 'pink' : 'blue')
-//   }
+  //   const handleChangeTheme = (event) => {
+  //     setTheme(event.target.checked ? 'pink' : 'blue')
+  //   }
   const { theme, onChangeTheme } = useTheme();
 
   return (
     <>
-    <Form/>
-      <label>
+      <label className="check_theme">
         <input
           type="checkbox"
           checked={theme === 'pink'}
@@ -25,4 +23,4 @@ const PanelContainer = () => {
   );
 };
 
-export default PanelContainer;
+export default PanelTheme;

@@ -7,7 +7,9 @@ let nextId = 0;
 
 function AddTask() {
   const { theme } = useTheme();
-  const className = `panel-${theme}`;
+  const panelClassName = `panel-${theme}`;
+  const buttonClassName = `button-${theme}`;
+
 
   const dispatch = useTasksDispatch();
 
@@ -15,7 +17,7 @@ function AddTask() {
 
   const handleChange = (event) => {
     setText(event.target.value)
-  }
+  };
 
   const handleClick = (event) => {
     setText('');
@@ -25,17 +27,17 @@ function AddTask() {
       text: text,
       done: false,
     })
-  }
+  };
 
   return (
     <>
-      <section className={className}>
+      <section className={panelClassName}>
         <input
           placeholder="Add new task"
           value={text}
           onChange={handleChange}
         />
-        <button
+        <button className={buttonClassName}
           onClick={handleClick}>
           Add task
         </button>
